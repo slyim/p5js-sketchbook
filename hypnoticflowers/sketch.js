@@ -40,10 +40,10 @@ function initializeFlowers() {
   let layerCount = 8;
   let baseSymmetry = 6; // Starting symmetry (petals)
   
-  // Max size calculations
+  // Max size calculations (scaled down for elegant viewport margins)
   let maxDimension = min(width, height);
-  let outerBound = maxDimension * 0.42;
-  let innerBound = maxDimension * 0.08;
+  let outerBound = maxDimension * 0.35;
+  let innerBound = maxDimension * 0.06;
   let spacing = (outerBound - innerBound) / (layerCount - 1);
   
   for (let i = 0; i < layerCount; i++) {
@@ -52,15 +52,15 @@ function initializeFlowers() {
     // Alternate direction: even layers spin clockwise, odd spin counter-clockwise
     let dir = (i % 2 === 0) ? 1 : -1;
     
-    // Rotate speed: outer rings spin slightly slower for organic motion
-    let speed = dir * (1.1 - i * 0.07);
+    // Slower, smoother rotation speed for a calming hypnotic velocity
+    let speed = dir * (0.35 - i * 0.02);
     
     // Alternate symmetries between rings (e.g. 6 and 9 petals) to construct
     // beautiful overlapping moiré/hypnotic geometric interference patterns
     let petals = (i % 2 === 0) ? baseSymmetry : baseSymmetry + 3;
     
-    // Petal depth scales harmoniously with layer size
-    let amp = radius * 0.22;
+    // Petal depth scales harmoniously with layer size (slightly shallower for neatness)
+    let amp = radius * 0.17;
     
     flowers.push(new Flower(i, radius, petals, amp, speed));
   }

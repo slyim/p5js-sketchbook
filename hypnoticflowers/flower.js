@@ -22,11 +22,12 @@ class Flower {
    * @param {number} time - Elapsed time frame counter.
    */
   display(time) {
-    // 1. Shift hue based on global shifting baseHue and layer offset
-    let layerHue = (baseHue + this.index * 15) % 360;
+    // 1. Alternating complementary hues (180 degrees apart) with soft analogous offsets
+    let hueOffset = (this.index % 2 === 0) ? 0 : 180;
+    let layerHue = (baseHue + hueOffset + this.index * 4) % 360;
     
-    // Saturation and lightness for highly vibrant neon colors
-    stroke(layerHue, 95, 60);
+    // Saturation and lightness for highly vibrant complementary matching colors
+    stroke(layerHue, 92, 58);
     strokeWeight(1.8 + (8 - this.index) * 0.15); // Outer rings are bolder
     noFill();
 
