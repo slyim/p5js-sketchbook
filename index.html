@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>p5.js Sketchbook | Generative Art & Interactive Canvas Gallery</title>
+  <meta name="description" content="A curated digital playground showcasing interactive generative art, visual mathematics, and complex geometric animations built using p5.js.">
+  <meta name="author" content="slyim">
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="p5.js Sketchbook | Generative Art & Interactive Canvas Gallery">
+  <meta property="og:description" content="Explore a stunning collection of interactive and generative p5.js sketches.">
+  
+  <!-- Core styling -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="logo-section">
+      <div class="logo-dot"></div>
+      <span class="logo-text">p5.JS / SKETCHBOOK</span>
+    </div>
+    <a href="https://github.com/slyim/p5js-sketchbook" target="_blank" rel="noopener noreferrer" class="github-link" id="githubRepoLink">
+      <svg height="20" width="20" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+      </svg>
+      <span>Repository</span>
+    </a>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Title -->
+    <section class="hero">
+      <div class="sketch-badge">
+        <span>✨ 1 Sketch Live</span>
+      </div>
+      <h1>Explore <span class="gradient-text">Creative Code</span> & Art</h1>
+      <p>A digital gallery for generative geometry, visual algorithms, and interactive physics simulations built entirely on canvas.</p>
+    </section>
+
+    <!-- Sketches Grid Section -->
+    <section class="sketches-grid" id="galleryGrid">
+      
+      <!-- Card: Hypnotic Flowers -->
+      <article class="sketch-card" id="cardHypnoticFlowers">
+        <div class="sketch-visual">
+          <div class="visual-bg-flowers"></div>
+          <span class="sketch-icon-overlay">🌀</span>
+        </div>
+        <div class="sketch-info">
+          <div class="sketch-meta">
+            <span class="tag accent">Geometry</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">p5.js</span>
+          </div>
+          <h2 class="sketch-title">Hypnotic Flowers</h2>
+          <p class="sketch-desc">
+            An elegant, fullscreen sacred geometry visualizer featuring concentric layered flowers that bloom, rotate, and cycle colors automatically using Moiré geometric interference and parametric math.
+          </p>
+          <div class="sketch-actions">
+            <button class="btn btn-primary btn-preview" data-path="hypnoticflowers/index.html" data-name="Hypnotic Flowers" id="previewBtnHypnotic">
+              Quick Preview
+            </button>
+            <a href="hypnoticflowers/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="launchBtnHypnotic">
+              Launch Full
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card: Coming Soon Placeholder -->
+      <article class="sketch-card placeholder" id="cardComingSoon">
+        <div class="placeholder-icon">+</div>
+        <h3 class="placeholder-title">Next Sketch...</h3>
+        <p class="placeholder-desc">Drafting and coding new visual concepts. Keep an eye out!</p>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Interactive Quick Preview Modal -->
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-status-dot"></div>
+          <span class="modal-title" id="modalTitle">Sketch Preview</span>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Preview modal">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-loading" id="modalLoading">
+          <div class="spinner"></div>
+          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-secondary);">Loading sketch environment...</p>
+        </div>
+        <iframe src="about:blank" class="modal-iframe" id="modalIframe" title="Interactive sketch preview iframe"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-logo">
+      <span class="logo-text">p5.JS / SKETCHBOOK</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 slyim. Created with love, mathematics, and code.</p>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+
+</html>
