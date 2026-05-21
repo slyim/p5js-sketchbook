@@ -211,7 +211,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background: var(--bg-page);
-  padding: 140px 48px 80px;
+  padding: 80px 48px;
   display: flex;
   justify-content: center;
 }
@@ -737,7 +737,7 @@ body {
     display: none;
   }
   .page-section {
-    padding: 120px 24px 60px;
+    padding: 60px 24px;
   }
   .modal-canvas-wrap {
     aspect-ratio: 4/3;
@@ -762,7 +762,7 @@ body {
 
 @media (max-width: 480px) {
   .page-section {
-    padding: 100px 16px 120px;
+    padding: 48px 16px 80px;
   }
   .code-grid {
     grid-template-columns: 1fr;
