@@ -64,6 +64,11 @@ function initPreviewModal() {
 
   // Attach close events
   closeBtn.addEventListener('click', closeModal);
+
+  // Close modal when launching full screen to free up CPU/RAM resources immediately
+  modalLaunchLink.addEventListener('click', () => {
+    closeModal();
+  });
   
   // Close when clicking overlay (outside the modal content box)
   modalOverlay.addEventListener('click', (e) => {
