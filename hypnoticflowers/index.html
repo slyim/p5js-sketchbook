@@ -4,12 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hypnotic Flowers - Visual Generator</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Hypnotic Flowers - Sacred Geometry Animation</title>
 
   <!-- Core Styling -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -20,113 +15,6 @@
 </head>
 
 <body>
-  <!-- Dashboard Sidebar Overlay -->
-  <div id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-      <h1>Hypnotic Flowers</h1>
-      <span class="subtitle">SACRED GEOMETRY GENERATOR</span>
-    </div>
-
-    <div class="sidebar-scroll">
-      <!-- Section: Presets -->
-      <div class="control-section">
-        <h3>VISUAL PRESETS</h3>
-        <div class="preset-grid">
-          <button class="preset-btn active" data-preset="cosmic">Cosmic Pulse</button>
-          <button class="preset-btn" data-preset="vortex">Psychedelic Vortex</button>
-          <button class="preset-btn" data-preset="zen">Zen Lotus</button>
-          <button class="preset-btn" data-preset="cyber">Cyber Grid</button>
-        </div>
-      </div>
-
-      <!-- Section: Parameters -->
-      <div class="control-section">
-        <h3>PARAMETERS</h3>
-        
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Rotation Speed</span>
-            <span id="speed-value">1.0x</span>
-          </div>
-          <input type="range" id="speed-slider" min="0" max="3" step="0.1" value="1">
-        </div>
-
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Flower Layers</span>
-            <span id="layers-value">5</span>
-          </div>
-          <input type="range" id="layers-slider" min="1" max="12" step="1" value="5">
-        </div>
-
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Petal Symmetry</span>
-            <span id="petals-value">8</span>
-          </div>
-          <input type="range" id="petals-slider" min="2" max="24" step="1" value="8">
-        </div>
-
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Breathing Depth</span>
-            <span id="breathing-value">30px</span>
-          </div>
-          <input type="range" id="breathing-slider" min="0" max="100" step="5" value="30">
-        </div>
-
-        <div class="slider-group">
-          <div class="slider-label">
-            <span>Color Spread</span>
-            <span id="color-value">15°</span>
-          </div>
-          <input type="range" id="color-slider" min="0" max="60" step="2" value="15">
-        </div>
-      </div>
-
-      <!-- Section: Visual Toggles -->
-      <div class="control-section">
-        <h3>RENDER SETTINGS</h3>
-        
-        <div class="toggle-row">
-          <span>Vector Neon Glow</span>
-          <label class="switch">
-            <input type="checkbox" id="glow-toggle" checked>
-            <span class="slider-round"></span>
-          </label>
-        </div>
-
-        <div class="toggle-row">
-          <span>Motion Trails</span>
-          <label class="switch">
-            <input type="checkbox" id="trails-toggle" checked>
-            <span class="slider-round"></span>
-          </label>
-        </div>
-
-        <div class="toggle-row">
-          <span>Interactive Mouse</span>
-          <label class="switch">
-            <input type="checkbox" id="mouse-toggle">
-            <span class="slider-round"></span>
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section: Actions Footer -->
-    <div class="sidebar-actions">
-      <div class="action-row">
-        <button id="play-pause-btn" class="action-btn primary">Pause</button>
-        <button id="randomize-btn" class="action-btn secondary">Randomize</button>
-      </div>
-      <div class="action-row">
-        <button id="save-btn" class="action-btn accent">Save Artwork</button>
-        <button id="fullscreen-btn" class="action-btn dark">Fullscreen</button>
-      </div>
-    </div>
-  </div>
-
   <!-- Loading local scripts (flower first, then main sketch) -->
   <script src="flower.js"></script>
   <script src="sketch.js"></script>
