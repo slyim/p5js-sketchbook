@@ -5,115 +5,256 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- SEO Meta Tags -->
-  <title>p5.js Sketchbook | Generative Art & Interactive Canvas Gallery</title>
-  <meta name="description" content="A curated digital playground showcasing interactive generative art, visual mathematics, and complex geometric animations built using p5.js.">
-  <meta name="author" content="slyim">
-  
-  <!-- Open Graph / Social Sharing -->
+  <!-- SEO & Social Meta Tags -->
+  <title>Creative Coding — Lila</title>
+  <meta name="description" content="Generative art and creative coding experiments — where code becomes canvas and algorithms create beauty.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="p5.js Sketchbook | Generative Art & Interactive Canvas Gallery">
-  <meta property="og:description" content="Explore a stunning collection of interactive and generative p5.js sketches.">
+  <meta property="og:site_name" content="Lila Portfolio">
+  <meta property="og:title" content="Creative Coding — Lila">
+  <meta property="og:description" content="Generative art and creative coding experiments — where code becomes canvas and algorithms create beauty.">
   
-  <!-- Core styling -->
+  <!-- Core Design CSS System -->
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header Navigation -->
-  <header>
-    <div class="logo-section">
-      <div class="logo-dot"></div>
-      <span class="logo-text">p5.JS / SKETCHBOOK</span>
-    </div>
-    <a href="https://github.com/slyim/p5js-sketchbook" target="_blank" rel="noopener noreferrer" class="github-link" id="githubRepoLink">
-      <svg height="20" width="20" viewBox="0 0 16 16">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-      </svg>
-      <span>Repository</span>
-    </a>
-  </header>
-
-  <main class="container">
-    <!-- Hero / Title -->
-    <section class="hero">
-      <div class="sketch-badge">
-        <span>✨ 1 Sketch Live</span>
+  <!-- Translucent Floating Navbar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-border" aria-hidden="true"></div>
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="/" class="nav-logo" aria-label="Go to home page" id="navHomeLink">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="22" height="22" fill="currentColor">
+            <g><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></g>
+          </svg>
+        </a>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links" role="list">
+          <a href="/artworks" class="nav-link" role="listitem" aria-label="Artworks page" id="navArtworks">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16" fill="currentColor">
+              <g><path d="M232,32a8,8,0,0,0-8-8c-44.08,0-89.31,49.71-114.43,82.63A60,60,0,0,0,32,164c0,30.88-19.54,44.73-20.47,45.37A8,8,0,0,0,16,224H92a60,60,0,0,0,57.37-77.57C182.3,121.31,232,76.08,232,32ZM92,208H34.63C41.38,198.41,48,183.92,48,164a44,44,0,1,1,44,44Zm32.42-94.45q5.14-6.66,10.09-12.55A76.23,76.23,0,0,1,155,121.49q-5.9,4.94-12.55,10.09A60.54,60.54,0,0,0,124.42,113.55Zm42.7-2.68a92.57,92.57,0,0,0-22-22c31.78-34.53,55.75-45,69.9-47.91C212.17,55.12,201.65,79.09,167.12,110.87Z"></path></g>
+            </svg>
+            <span>Artworks</span>
+          </a>
+          <a href="/designs" class="nav-link" role="listitem" aria-label="Designs page" id="navDesigns">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16" fill="currentColor">
+              <g><path d="M200.77,53.89A103.27,103.27,0,0,0,128,24h-1.07A104,104,0,0,0,24,128c0,43,26.58,79.06,69.36,94.17A32,32,0,0,0,136,192a16,16,0,0,1,16-16h46.21a31.81,31.81,0,0,0,31.2-24.88,104.43,104.43,0,0,0,2.59-24A103.28,103.28,0,0,0,200.77,53.89Zm13,93.71A15.89,15.89,0,0,1,198.21,160H152a32,32,0,0,0-32,32,16,16,0,0,1-21.31,15.07C62.49,194.3,40,164,40,128a88,88,0,0,1,87.09-88h.9a88.35,88.35,0,0,1,88,87.25A88.86,88.86,0,0,1,213.81,147.6ZM140,76a12,12,0,1,1-12-12A12,12,0,0,1,140,76ZM96,100A12,12,0,1,1,84,88,12,12,0,0,1,96,100Zm0,56a12,12,0,1,1-12-12A12,12,0,0,1,96,156Zm88-56a12,12,0,1,1-12-12A12,12,0,0,1,184,100Z"></path></g>
+            </svg>
+            <span>Designs</span>
+          </a>
+          <a href="/creative-coding" class="nav-link active" role="listitem" aria-label="Creative Coding page" id="navCreative">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16" fill="currentColor">
+              <g><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM92.8,145.6a8,8,0,1,1-9.6,12.8l-32-24a8,8,0,0,1,0-12.8l32-24a8,8,0,0,1,9.6,12.8L69.33,128Zm58.89-71.4-32,112a8,8,0,1,1-15.38-4.4l32-112a8,8,0,0,1,15.38,4.4Zm53.11,60.2-32,24a8,8,0,0,1-9.6-12.8L186.67,128,163.2,110.4a8,8,0,1,1,9.6-12.8l32,24a8,8,0,0,1,0,12.8Z"></path></g>
+            </svg>
+            <span>Creative Coding</span>
+          </a>
+          <a href="/photography" class="nav-link" role="listitem" aria-label="Photography page" id="navPhotography">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16" fill="currentColor">
+              <g><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"></path></g>
+            </svg>
+            <span>Photography</span>
+          </a>
+          <a href="/soundscapes" class="nav-link" role="listitem" aria-label="Soundscapes page" id="navSoundscapes">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16" fill="currentColor">
+              <g><path d="M201.89,54.66A103.43,103.43,0,0,0,128.79,24H128A104,104,0,0,0,24,128v56a24,24,0,0,0,24,24H64a24,24,0,0,0,24-24V144a24,24,0,0,0-24-24H40.36A88,88,0,0,1,128,40h.67a87.71,87.71,0,0,1,87,80H192a24,24,0,0,0-24,24v40a24,24,0,0,0,24,24h16a24,24,0,0,0,24-24V128A103.41,103.41,0,0,0,201.89,54.66ZM64,136a8,8,0,0,1,8,8v40a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V136Zm152,48a8,8,0,0,1-8,8H192a8,8,0,0,1-8-8V144a8,8,0,0,1,8-8h24Z"></path></g>
+            </svg>
+            <span>Soundscapes</span>
+          </a>
+        </div>
+        
+        <!-- Empty globe visual context spacer -->
+        <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; opacity: 0.5;">🌐</div>
       </div>
-      <h1>Explore <span class="gradient-text">Creative Code</span> & Art</h1>
-      <p>A digital gallery for generative geometry, visual algorithms, and interactive physics simulations built entirely on canvas.</p>
-    </section>
+    </div>
+  </nav>
 
-    <!-- Sketches Grid Section -->
-    <section class="sketches-grid" id="galleryGrid">
-      
-      <!-- Card: Hypnotic Flowers -->
-      <article class="sketch-card" id="cardHypnoticFlowers">
-        <div class="sketch-visual">
-          <div class="visual-bg-flowers"></div>
-          <span class="sketch-icon-overlay">🌀</span>
-        </div>
-        <div class="sketch-info">
-          <div class="sketch-meta">
-            <span class="tag accent">Geometry</span>
-            <span class="tag">Interactive</span>
-            <span class="tag">p5.js</span>
+  <!-- Page Main Section -->
+  <main class="page-section" id="main-content">
+    <div class="page-inner">
+      <!-- Page Title -->
+      <h1 class="page-title">Creative Coding</h1>
+
+      <!-- Code Showcase Grid (Exclusively my sketches, no coming soon placeholders) -->
+      <div class="code-grid" id="creativeGrid">
+        
+        <!-- Sketch Card: Hypnotic Flowers -->
+        <div class="code-card" data-path="hypnoticflowers/index.html" data-name="Hypnotic Flowers" data-desc="Interactive sacred geometry animation featuring Moire geometric interference and multi-harmonic rotations." id="cardHypnoticFlowers">
+          <div class="card-border"></div>
+          <div class="card-inner">
+            <!-- Click Indicator Icon -->
+            <div class="click-indicator">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="20" height="20" fill="currentColor">
+                <g><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"></path></g>
+              </svg>
+            </div>
+            
+            <!-- Canvas Visual Preview -->
+            <div class="code-canvas-preview">
+              <div class="visual-bg-flowers"></div>
+              <span class="sketch-icon-overlay">🌀</span>
+            </div>
+            
+            <!-- Text Info overlay -->
+            <div class="code-info">
+              <span class="code-title">Hypnotic Flowers</span>
+              <span class="code-desc">Interactive shape splitting and particle flow based on mouse position.</span>
+            </div>
           </div>
-          <h2 class="sketch-title">Hypnotic Flowers</h2>
-          <p class="sketch-desc">
-            An elegant, fullscreen sacred geometry visualizer featuring concentric layered flowers that bloom, rotate, and cycle colors automatically using Moiré geometric interference and parametric math.
-          </p>
-          <div class="sketch-actions">
-            <button class="btn btn-primary btn-preview" data-path="hypnoticflowers/index.html" data-name="Hypnotic Flowers" id="previewBtnHypnotic">
-              Quick Preview
-            </button>
-            <a href="hypnoticflowers/index.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="launchBtnHypnotic">
-              Launch Full
-            </a>
-          </div>
         </div>
-      </article>
 
-      <!-- Card: Coming Soon Placeholder -->
-      <article class="sketch-card placeholder" id="cardComingSoon">
-        <div class="placeholder-icon">+</div>
-        <h3 class="placeholder-title">Next Sketch...</h3>
-        <p class="placeholder-desc">Drafting and coding new visual concepts. Keep an eye out!</p>
-      </article>
-
-    </section>
+      </div>
+    </div>
   </main>
 
-  <!-- Interactive Quick Preview Modal -->
+  <!-- Quick Preview Modal (zelva.design style) -->
   <div class="modal-overlay" id="previewModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="modal-status-dot"></div>
-          <span class="modal-title" id="modalTitle">Sketch Preview</span>
-        </div>
-        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Preview modal">×</button>
-      </div>
-      <div class="modal-body">
+    <div class="modal-content">
+      <!-- Close Button -->
+      <button class="modal-close" id="closeModalBtn" aria-label="Close modal">×</button>
+      
+      <!-- Sketch Canvas Wrap -->
+      <div class="modal-canvas-wrap">
         <div class="modal-loading" id="modalLoading">
           <div class="spinner"></div>
-          <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-secondary);">Loading sketch environment...</p>
+          <p style="font-family: var(--font-sans); font-size: 0.8rem; color: var(--text-muted);">Initializing creative coding environment...</p>
         </div>
-        <iframe src="about:blank" class="modal-iframe" id="modalIframe" title="Interactive sketch preview iframe"></iframe>
+        <iframe src="about:blank" class="modal-iframe" id="modalIframe" title="Interactive sketch preview"></iframe>
+      </div>
+      
+      <!-- Info Footer -->
+      <div class="modal-info">
+        <div class="modal-title-group">
+          <h2 class="modal-title" id="modalTitle">Hypnotic Flowers</h2>
+          <p class="modal-desc" id="modalDesc">Interactive sacred geometry animation featuring Moire geometric interference and multi-harmonic rotations.</p>
+        </div>
+        <!-- Direct Launch Link -->
+        <a href="hypnoticflowers/index.html" target="_blank" rel="noopener noreferrer" class="modal-launch-link" id="modalLaunchLink">
+          <span>Launch Full</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="14" height="14" fill="currentColor">
+            <g><path d="M224,104V32a8,8,0,0,0-8-8H144a8,8,0,0,0,0,16h52.69L108.68,128.69a8,8,0,0,0,11.31,11.31L208,51.31V104a8,8,0,0,0,16,0ZM184,136a8,8,0,0,0-8,8v64H40V72h64a8,8,0,0,0,0-16H32a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V144A8,8,0,0,0,184,136Z"></path></g>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-logo">
-      <span class="logo-text">p5.JS / SKETCHBOOK</span>
+  <!-- Four-Column Site Footer (zelva.design) -->
+  <footer id="footer" class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-col">
+          <h3 class="col-title">LILA</h3>
+          <p class="col-desc">Product Designer & Creative Developer</p>
+          <div class="contact-items">
+            <a href="mailto:shylesian@gmail.com" class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="14" height="14" fill="currentColor">
+                <g><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></g>
+              </svg>
+              <span>shylesian@gmail.com</span>
+            </a>
+            <span class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="14" height="14" fill="currentColor">
+                <g><path d="M128,16a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path></g>
+              </svg>
+              <span>Istanbul, TR</span>
+            </span>
+          </div>
+        </div>
+        
+        <!-- Col 2: Footer Links -->
+        <div class="footer-col">
+          <h4 class="col-heading">Footer</h4>
+          <nav class="col-links" aria-label="Footer navigation">
+            <a href="/artworks" class="col-link">Artworks</a>
+            <a href="/designs" class="col-link">Designs</a>
+            <a href="/creative-coding" class="col-link" style="color: var(--accent-color); font-weight:600;">Creative Coding</a>
+            <a href="/photography" class="col-link">Photography</a>
+            <a href="/soundscapes" class="col-link">Soundscapes</a>
+            <a href="/about" class="col-link">About</a>
+            <a href="/#contact" class="col-link">Contact me</a>
+          </nav>
+        </div>
+        
+        <!-- Col 3: Legal links -->
+        <div class="footer-col">
+          <h4 class="col-heading">Legal</h4>
+          <nav class="col-links" aria-label="Legal links">
+            <a href="/privacy" class="col-link">Privacy Policy</a>
+            <a href="/terms" class="col-link">Terms of Use</a>
+            <a href="/cookies" class="col-link">Cookies</a>
+            <a href="/accessibility" class="col-link">Accessibility</a>
+            <a href="/sitemap" class="col-link">Sitemap</a>
+          </nav>
+        </div>
+        
+        <!-- Col 4: Connect Links -->
+        <div class="footer-col">
+          <h4 class="col-heading">Connect</h4>
+          <div class="social-grid">
+            <a href="https://github.com/slyim" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" fill="currentColor">
+                <g><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.87,43.87,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path></g>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/violilygirl/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" fill="currentColor">
+                <g><path d="M176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm64-84a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></g>
+              </svg>
+            </a>
+            <a href="https://dribbble.com/Shylesiana" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Dribbble">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" fill="currentColor">
+                <g><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm87.65,96.18Q211.83,120,208,120a168.58,168.58,0,0,0-43.94,5.84A166.52,166.52,0,0,0,150.61,96a168.32,168.32,0,0,0,38.2-31.55A87.78,87.78,0,0,1,215.65,120.18ZM176.28,54.46A151.75,151.75,0,0,1,142,82.52a169.22,169.22,0,0,0-38.63-39,88,88,0,0,1,73,10.94ZM85.65,50.88a153.13,153.13,0,0,1,42,39.18A151.82,151.82,0,0,1,64,104a154.19,154.19,0,0,1-20.28-1.35A88.39,88.39,0,0,1,85.65,50.88ZM40,128a87.73,87.73,0,0,1,.53-9.64A168.85,168.85,0,0,0,64,120a167.84,167.84,0,0,0,72.52-16.4,150.82,150.82,0,0,1,12.31,27.13,167.11,167.11,0,0,0-24.59,11.6,169.22,169.22,0,0,0-55.07,51.06A87.8,87.8,0,0,1,40,128Zm42,75a152.91,152.91,0,0,1,50.24-46.79,148.81,148.81,0,0,1,20.95-10,152.48,152.48,0,0,1,3.73,33.47,152.93,152.93,0,0,1-3.49,32.56A87.92,87.92,0,0,1,82,203Zm89.06,1.73a170,170,0,0,0,1.86-25,168.69,168.69,0,0,0-4.45-38.47A152.31,152.31,0,0,1,208,136q3.8,0,7.61.19A88.13,88.13,0,0,1,171.06,204.72Z"></path></g>
+              </svg>
+            </a>
+            <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Behance">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="18" height="18" fill="currentColor">
+                <g><path d="M160,80a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H168A8,8,0,0,1,160,80Zm-24,78a42,42,0,0,1-42,42H32a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H90a38,38,0,0,1,25.65,66A42,42,0,0,1,136,158ZM40,116H90a22,22,0,0,0,0-44H40Zm80,42a26,26,0,0,0-26-26H40v52H94A26,26,0,0,0,120,158Zm128-6a8,8,0,0,1-8,8H169a32,32,0,0,0,56.59,11.2,8,8,0,0,1,12.8,9.61A48,48,0,1,1,248,152Zm-17-8a32,32,0,0,0-62,0Z"></path></g>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-divider"></div>
+      
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="bottom-left">
+          <span class="bottom-text">&copy; 2026 Lila. All rights reserved.</span>
+          <span class="bottom-sep">·</span>
+          <span class="bottom-text">Content licensed under CC BY-NC-ND 4.0</span>
+        </div>
+        
+        <div class="bottom-center">
+          <span class="footer-trans-rights">
+            Trans rights are human rights 
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trans-icon" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <line x1="14.83" y1="9.17" x2="20" y2="4"></line>
+              <polyline points="15 4 20 4 20 9"></polyline>
+              <line x1="12" y1="16" x2="12" y2="22"></line>
+              <line x1="9" y1="19" x2="15" y2="19"></line>
+              <line x1="9.17" y1="9.17" x2="4" y2="4"></line>
+              <polyline points="9 4 4 4 4 9"></polyline>
+              <line x1="5.5" y1="8.5" x2="8.5" y2="5.5"></line>
+            </svg>
+          </span>
+        </div>
+        
+        <div class="bottom-right">
+          <span class="bottom-text">Colophon</span>
+          <span class="bottom-sep">·</span>
+          <span class="bottom-text tools-text">HTML5 · Vanilla CSS · p5.js · Phosphor Icons</span>
+        </div>
+      </div>
     </div>
-    <p class="footer-copy">&copy; 2026 slyim. Created with love, mathematics, and code.</p>
   </footer>
 
-  <!-- Application Logic -->
+  <!-- Portal Navigation & Preview Logic -->
   <script src="app.js"></script>
 </body>
 

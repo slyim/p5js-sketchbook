@@ -1,31 +1,12 @@
 /**
  * p5.js Sketchbook Portal Application Logic
- * Implements interactive card hover effects, preview modal operations, and performance controls.
+ * Matches the design and interaction patterns of zelva.design.
+ * Manages performance-optimized canvas modals and keyboard triggers.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCardHoverEffects();
   initPreviewModal();
 });
-
-/**
- * Creates a dynamic light reflection glow on glassmorphic cards
- * by updating local custom properties tracking the cursor position.
- */
-function initCardHoverEffects() {
-  const cards = document.querySelectorAll('.sketch-card:not(.placeholder)');
-  
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left; // x coordinate within the card
-      const y = e.clientY - rect.top;  // y coordinate within the card
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  });
-}
 
 /**
  * Manages the iframe preview modal window.
@@ -33,16 +14,21 @@ function initCardHoverEffects() {
  */
 function initPreviewModal() {
   const modalOverlay = document.getElementById('previewModal');
-  const modalContainer = modalOverlay.querySelector('.modal-container');
+  const modalContent = modalOverlay.querySelector('.modal-content');
   const modalIframe = document.getElementById('modalIframe');
   const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalLaunchLink = document.getElementById('modalLaunchLink');
   const modalLoading = document.getElementById('modalLoading');
   const closeBtn = document.getElementById('closeModalBtn');
-  const previewButtons = document.querySelectorAll('.btn-preview');
+  const codeCards = document.querySelectorAll('.code-card');
 
   // Open Modal Function
-  const openModal = (sketchPath, sketchName) => {
+  const openModal = (sketchPath, sketchName, sketchDesc) => {
     modalTitle.textContent = sketchName;
+    modalDesc.textContent = sketchDesc;
+    modalLaunchLink.href = sketchPath;
+    
     modalLoading.style.opacity = '1';
     modalLoading.style.display = 'flex';
     
@@ -65,22 +51,23 @@ function initPreviewModal() {
     }, 400); // Wait for the transition to finish before unloading
   };
 
-  // Attach event listeners to all quick preview buttons
-  previewButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
+  // Attach event listeners to all creative coding cards
+  codeCards.forEach(card => {
+    card.addEventListener('click', (e) => {
       e.preventDefault();
-      const sketchPath = button.getAttribute('data-path');
-      const sketchName = button.getAttribute('data-name');
-      openModal(sketchPath, sketchName);
+      const sketchPath = card.getAttribute('data-path');
+      const sketchName = card.getAttribute('data-name');
+      const sketchDesc = card.getAttribute('data-desc');
+      openModal(sketchPath, sketchName, sketchDesc);
     });
   });
 
   // Attach close events
   closeBtn.addEventListener('click', closeModal);
   
-  // Close when clicking overlay (outside the modal container)
+  // Close when clicking overlay (outside the modal content box)
   modalOverlay.addEventListener('click', (e) => {
-    if (!modalContainer.contains(e.target)) {
+    if (!modalContent.contains(e.target)) {
       closeModal();
     }
   });
@@ -101,7 +88,7 @@ function initPreviewModal() {
         modalLoading.style.display = 'none';
       }, 300);
       
-      // Auto-focus the iframe so keyboard events (e.g. key presses in the sketch) work immediately
+      // Auto-focus the iframe so keyboard events work immediately
       modalIframe.focus();
     }
   });
