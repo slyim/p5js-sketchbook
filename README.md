@@ -74,11 +74,11 @@ To run and experiment with these sketches locally:
    git clone https://github.com/slyim/p5js-sketchbook.git
    cd p5js-sketchbook
    ```
-2. Spin up a lightweight local server to ensure modules load flawlessly:
+2. Spin up the lightweight local dev server using Bun:
    ```bash
-   python3 -m http.server 8000
+   bun run server.js
    ```
-3. Open `http://localhost:8000` in your favorite web browser and explore!
+3. Open `http://localhost:3000` in your favorite web browser and explore!
 
 ---
 

@@ -51,14 +51,51 @@ function initPreviewModal() {
     }, 400); // Wait for the transition to finish before unloading
   };
 
-  // Attach event listeners to all creative coding cards
+  // Attach event listeners to all creative coding cards (Click for modal, Hover to auto-play)
   codeCards.forEach(card => {
+    const sketchPath = card.getAttribute('data-path');
+    const sketchName = card.getAttribute('data-name');
+    const sketchDesc = card.getAttribute('data-desc');
+    const previewContainer = card.querySelector('.code-canvas-preview');
+    let hoverIframe = null;
+
+    // Click handler to open full modal preview
     card.addEventListener('click', (e) => {
       e.preventDefault();
-      const sketchPath = card.getAttribute('data-path');
-      const sketchName = card.getAttribute('data-name');
-      const sketchDesc = card.getAttribute('data-desc');
       openModal(sketchPath, sketchName, sketchDesc);
+    });
+
+    // Hover play preview logic
+    card.addEventListener('mouseenter', () => {
+      if (!previewContainer || hoverIframe) return;
+
+      // Create high-performance sandboxed iframe for inline preview
+      hoverIframe = document.createElement('iframe');
+      hoverIframe.className = 'card-iframe-preview';
+      hoverIframe.src = sketchPath;
+      
+      // Once iframe is loaded, trigger smooth CSS fade-in transition
+      hoverIframe.addEventListener('load', () => {
+        if (hoverIframe && hoverIframe.src !== 'about:blank') {
+          hoverIframe.classList.add('loaded');
+          card.classList.add('preview-active');
+        }
+      });
+
+      previewContainer.appendChild(hoverIframe);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (!hoverIframe) return;
+
+      // Unload and destroy preview instantly to free CPU/RAM resources
+      hoverIframe.src = 'about:blank';
+      if (hoverIframe.parentNode) {
+        hoverIframe.parentNode.removeChild(hoverIframe);
+      }
+      hoverIframe = null;
+      
+      card.classList.remove('preview-active');
     });
   });
 
